@@ -3,7 +3,7 @@ from machine import I2C, Pin
 from vl6180x import Sensor
 from pcf8574 import PCF8574
 from pololu_3pi_2040_robot import robot
-from robot import MotionController
+from motion_controller import MotionController
 
 display = robot.Display()
 motors = robot.Motors()
