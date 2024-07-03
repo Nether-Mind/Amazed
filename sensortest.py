@@ -3,11 +3,15 @@ from machine import I2C, Pin
 from vl6180x import Sensor
 from pcf8574 import PCF8574
 from pololu_3pi_2040_robot import robot
+from robot import MotionController
 
 display = robot.Display()
 motors = robot.Motors()
+encoders = robot.Encoders()
+imu = robot.IMU()
 motors.flip_left(False)
 motors.flip_right(False)
+motionController = MotionController(motors, encoders, imu)
 
 i2c = I2C(id=0, scl=Pin(5), sda=Pin(4), freq=100_000)
 
